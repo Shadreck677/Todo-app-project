@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TODO APP</title>
+    <meta name="viewport" content="width=1024" />
+    <!-- <link rel="icon" type="image/" href="" /> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-title">TODO APP</div>
+    <div class="container">
+      <img src="/icons/icons8-react-24.png" class="logo" alt="React Logo" />
+      <div class="topbar" id="todo-count">0 / 0 todo completed</div>
+
+      <div class="main" id="todo-section">
+        <div id="todos-list" class="todos-empty">Start by adding a todo</div>
+      </div>
+      <div class="sidebar">
+        <label for="todo-input">Add to todo</label>
+        <input type="text" id="todo-input" placeholder="" />
+        <button onclick="addTodo()">Add to list</button>
+        <div class="auth-action">
+          <button class="auth-btn">Log In</button>
+          <button class="auth-btn">Register</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>&copy; 2025 Copyright by Shadreck</div>
+      <div class="version">Version 1.5</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

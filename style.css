@@ -1,0 +1,145 @@
+body {
+  background: #f2c9a2;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+.background-title {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 64px;
+  color: #eec19e;
+  font-weight: 700;
+  letter-spacing: 2px;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.container {
+  width: 900px;
+  margin: 64px auto 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  position: relative;
+  z-index: 1;
+  min-height: 480px;
+}
+.sidebar {
+  width: 320px;
+  border-left: 1px solid #f5e7d8;
+  border-radius: 0 8px 8px 0;
+  padding: 100px 24px 24px 24px;
+  background: #fcf8f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.main {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 38px;
+  /* background: #fcf8f3; */
+}
+
+.topbar {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  background: #fcf8f3;
+  padding: 6px 16px;
+  border: 8px;
+  padding-bottom: 10px;
+}
+.todos-empty {
+  text-align: center;
+  color: #222;
+  font-size: 15px;
+  font-weight: 550;
+}
+.sidebar label {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+  font-weight: 500;
+}
+.sidebar input[type="text"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+.sidebar button {
+  width: 100%;
+  padding: 11px 0;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #fff;
+  background: #634f3f;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+  font-weight: bold;
+  cursor: pointer;
+}
+.sidebar button:last-child {
+  margin-bottom: 0;
+}
+.sidebar button:hover {
+  background: #8c6d55;
+}
+.auth-btn {
+  margin-top: -14px;
+}
+
+.auth-action {
+  margin-top: auto;
+}
+
+.footer {
+  width: 900px;
+  margin: 15px auto 0 auto;
+  color: #9e7b50;
+  font-size: 13px;
+  text-align: left;
+  opacity: 0.95;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .version {
+  text-align: right;
+  min-width: 80px;
+  opacity: 0.6;
+}
+@media (max-width: 1000px) {
+  .container,
+  .footer {
+    width: 100vw;
+    min-width: 320px;
+    box-sizing: border-box;
+  }
+}
