@@ -64,11 +64,7 @@ function renderTodos() {
       // Delete button
       const delBtn = document.createElement("button");
       delBtn.textContent = "❌";
-      delBtn.style.marginLeft = "10px";
-      delBtn.style.border = "none";
-      delBtn.style.background = "transparent";
-      delBtn.style.cursor = "pointer";
-
+      delBtn.className = "delete-x";
       delBtn.onclick = function (e) {
         e.stopPropagation(); // Prevent toggle complete
         todos.splice(index, 1);
