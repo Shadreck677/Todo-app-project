@@ -47,6 +47,9 @@ function renderTodos() {
       li.textContent = todo.text;
       li.style.cursor = "pointer";
       li.style.fontSize = "16px";
+      li.style.padding = "10px";
+      li.style.borderTop = "1px solid #ccc";
+      li.style.color = "#1a181b";
 
       if (todo.completed) {
         li.style.textDecoration = "line-through";
