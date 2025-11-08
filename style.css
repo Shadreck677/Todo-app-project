@@ -55,7 +55,6 @@ body {
   top: 14px;
   left: 18px;
   width: 38px;
-  /* background: #fcf8f3; */
 }
 
 .topbar {
@@ -76,6 +75,23 @@ body {
   font-size: 15px;
   font-weight: 550;
 }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 250px;
+}
+
+.delete-x {
+  color: #f55;
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .sidebar label {
   font-size: 15px;
   margin-bottom: 8px;
@@ -143,3 +159,4 @@ body {
     box-sizing: border-box;
   }
 }
+
