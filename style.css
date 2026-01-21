@@ -1,4 +1,3 @@
-/* 1. Global Fixes */
 * {
   box-sizing: border-box; /* Prevents elements from breaking out of the screen */
   margin: 0;
@@ -15,7 +14,7 @@ body {
   padding: 20px;
 }
 
-/* 2. Background Title - Responsive Font */
+
 .background-title {
   font-size: clamp(32px, 8vw, 64px);
   color: rgba(0,0,0,0.05); /* Subtle look */
@@ -26,21 +25,21 @@ body {
   pointer-events: none;
 }
 
-/* 3. Main Container - Fixed Width for Mobile */
+
 .container {
   width: 100%;
   max-width: 900px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  display: flex; /* Horizontal on Desktop */
+  display: flex; 
   overflow: hidden;
   position: relative;
   z-index: 1;
   min-height: 500px;
 }
 
-/* 4. Sidebar - Now on the LEFT for Desktop, Top for Mobile */
+
 .sidebar {
   width: 320px;
   background: #fcf8f3;
@@ -58,7 +57,7 @@ body {
   flex-direction: column;
 }
 
-/* 5. Header Elements */
+
 .logo {
   position: absolute;
   top: 20px;
@@ -74,7 +73,7 @@ body {
   color: #634f3f;
 }
 
-/* 6. Todo Items - Improved Mobile Look */
+
 ul { padding: 0; }
 
 li {
@@ -103,7 +102,7 @@ li:hover {
   padding: 5px 10px;
 }
 
-/* 7. Forms */
+
 .sidebar label {
   font-size: 14px;
   font-weight: 600;
@@ -140,7 +139,6 @@ li:hover {
   background: #4a3b2f;
 }
 
-/* 8. Footer */
 .footer {
   width: 100%;
   max-width: 900px;
@@ -154,7 +152,7 @@ li:hover {
 /* 9. MOBILE RESPONSIVE LOGIC */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack vertically on phones */
+    flex-direction: column; 
     min-height: auto;
   }
 
@@ -168,15 +166,16 @@ li:hover {
 
   .main {
     width: 100%;
-    order: 1; /* List stays at top */
+    order: 1; 
     padding: 70px 20px 30px 20px;
   }
 
   .background-title {
-    display: none; /* Too cluttered for mobile */
+    display: none; 
   }
 
   li {
-    font-size: 16px; /* Larger text for easier tapping */
+    font-size: 16px; 
   }
 }
+
