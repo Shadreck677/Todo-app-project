@@ -151,6 +151,8 @@ li {
   min-width: 80px;
   opacity: 0.6;
 }
+
+/* Existing breakpoint (kept and extended) */
 @media (max-width: 1000px) {
   .container,
   .footer {
@@ -160,3 +162,168 @@ li {
   }
 }
 
+/* Responsive: Tablet and small laptops */
+@media (max-width: 900px) {
+  .container {
+    width: calc(100% - 48px);
+    margin: 32px auto;
+    flex-direction: column;
+    min-height: auto;
+    padding: 12px;
+  }
+
+  /* Stack main above sidebar for a more natural flow on narrow screens */
+  .main {
+    order: 1;
+    padding: 20px;
+    min-height: 260px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .sidebar {
+    order: 2;
+    width: 100%;
+    border-left: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    margin-top: 12px;
+  }
+
+  .footer {
+    width: calc(100% - 48px);
+    margin: 12px auto 0 auto;
+    padding: 0 12px;
+  }
+
+  .background-title {
+    font-size: 48px;
+    top: -40px;
+  }
+
+  .logo {
+    top: 10px;
+    left: 12px;
+    width: 34px;
+  }
+
+  .topbar {
+    right: 12px;
+    top: 10px;
+    font-size: 15px;
+    padding: 6px 12px;
+  }
+
+  .sidebar input[type="text"],
+  .sidebar button {
+    font-size: 15px;
+  }
+}
+
+/* Responsive: Phones (small and large) */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+    margin: 20px auto;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Keep vertical stacking */
+  .main {
+    padding: 16px;
+    min-height: 200px;
+  }
+
+  .sidebar {
+    padding: 16px;
+  }
+
+  .sidebar label {
+    font-size: 14px;
+  }
+
+  .sidebar input[type="text"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .sidebar button {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .background-title {
+    display: none; /* hide large decorative title on very small screens */
+  }
+
+  .logo {
+    width: 30px;
+    top: 8px;
+    left: 10px;
+  }
+
+  .topbar {
+    right: 8px;
+    top: 8px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .todos-empty {
+    font-size: 14px;
+  }
+
+  li {
+    min-width: 0;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .delete-x {
+    font-size: 14px;
+  }
+
+  .footer {
+    width: calc(100% - 32px);
+    margin: 12px auto 0 auto;
+    padding: 0 8px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .footer .version {
+    text-align: left;
+    min-width: auto;
+    opacity: 0.7;
+  }
+}
+
+/* Very small devices (older phones or narrow screens) */
+@media (max-width: 360px) {
+  .container {
+    margin: 12px 8px;
+    width: calc(100% - 16px);
+    padding: 6px;
+  }
+
+  .sidebar {
+    padding: 12px;
+  }
+
+  .main {
+    padding: 12px;
+    min-height: 160px;
+  }
+
+  .sidebar button {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+}
