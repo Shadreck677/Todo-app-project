@@ -52,26 +52,29 @@ body {
 
 .main {
   flex: 1;
-  padding: 40px;
+  padding: 80px 40px 40px 40px; /* FIXED: Added significant top padding */
   background: #fff;
   display: flex;
   flex-direction: column;
+  position: relative; /* Essential for positioning logo/topbar correctly */
 }
 
-/* 5. Header Elements */
+/* 5. Header Elements - Positioned relative to .main or .container */
 .logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 30px; /* FIXED: Increased positioning */
+  left: 30px; /* FIXED: Increased positioning */
   width: 40px;
+  z-index: 2; /* Ensure it stays above other content */
 }
 
 .topbar {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px; /* FIXED: Increased positioning */
+  right: 30px; /* FIXED: Increased positioning */
   font-weight: 600;
   color: #634f3f;
+  z-index: 2; /* Ensure it stays above other content */
 }
 
 /* 6. Todo Items - Improved Mobile Look */
@@ -111,7 +114,7 @@ li:hover {
   color: #555;
 }
 
-.sidebar input[type="text"] {
+.sidebar input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -169,7 +172,7 @@ li:hover {
   .main {
     width: 100%;
     order: 1; /* List stays at top */
-    padding: 70px 20px 30px 20px;
+    padding: 30px 20px 30px 20px; /* Reduced padding for mobile */
   }
 
   .background-title {
