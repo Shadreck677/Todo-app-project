@@ -1,330 +1,182 @@
+/* 1. Global Fixes */
+* {
+  box-sizing: border-box; /* Prevents elements from breaking out of the screen */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #f2c9a2;
-  margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
-  position: relative;
-}
-.background-title {
-  position: absolute;
-  top: -55px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 64px;
-  color: #eec19e;
-  font-weight: 700;
-  letter-spacing: 2px;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-.container {
-  width: 900px;
-  margin: 64px auto 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  display: flex;
-  position: relative;
-  z-index: 1;
-  min-height: 480px;
-}
-.sidebar {
-  width: 320px;
-  border-left: 1px solid #f5e7d8;
-  border-radius: 0 8px 8px 0;
-  padding: 100px 24px 24px 24px;
-  background: #fcf8f3;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
+  padding: 20px;
 }
+
+/* 2. Background Title - Responsive Font */
+.background-title {
+  font-size: clamp(32px, 8vw, 64px);
+  color: rgba(0,0,0,0.05); /* Subtle look */
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: -20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 3. Main Container - Fixed Width for Mobile */
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex; /* Horizontal on Desktop */
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+}
+
+/* 4. Sidebar - Now on the LEFT for Desktop, Top for Mobile */
+.sidebar {
+  width: 320px;
+  background: #fcf8f3;
+  padding: 80px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee;
+}
+
 .main {
   flex: 1;
-  padding: 32px;
+  padding: 40px;
+  background: #fff;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  position: relative;
+  flex-direction: column;
 }
+
+/* 5. Header Elements */
 .logo {
   position: absolute;
-  top: 14px;
-  left: 18px;
-  width: 38px;
+  top: 20px;
+  left: 20px;
+  width: 40px;
 }
 
 .topbar {
   position: absolute;
-  right: 24px;
-  top: 12px;
-  font-size: 16px;
-  color: #444;
-  font-weight: 500;
-  background: #fcf8f3;
-  padding: 6px 16px;
-  border: 8px;
-  padding-bottom: 10px;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
+  color: #634f3f;
 }
-.todos-empty {
-  text-align: center;
-  color: #222;
-  font-size: 15px;
-  font-weight: 550;
-}
+
+/* 6. Todo Items - Improved Mobile Look */
+ul { padding: 0; }
 
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  min-width: 250px;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .delete-x {
-  color: #f55;
-  font-size: 15px;
-  background: transparent;
+  color: #ff5f5f;
+  background: none;
   border: none;
-  cursor: pointer;
-}
-
-.sidebar label {
-  font-size: 15px;
-  margin-bottom: 8px;
-  display: block;
-  color: #333;
-  font-weight: 500;
-}
-.sidebar input[type="text"] {
-  width: 100%;
-  font-size: 16px;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-}
-.sidebar button {
-  width: 100%;
-  padding: 11px 0;
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #fff;
-  background: #634f3f;
-  border: none;
-  border-radius: 4px;
-  transition: background 0.15s;
   font-weight: bold;
   cursor: pointer;
+  padding: 5px 10px;
 }
-.sidebar button:last-child {
-  margin-bottom: 0;
+
+/* 7. Forms */
+.sidebar label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
 }
+
+.sidebar input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+}
+
+.sidebar input:focus {
+  border-color: #634f3f;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 12px;
+  background: #634f3f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
 .sidebar button:hover {
-  background: #8c6d55;
-}
-.auth-btn {
-  margin-top: -14px;
+  background: #4a3b2f;
 }
 
-.auth-action {
-  margin-top: auto;
-}
-
+/* 8. Footer */
 .footer {
-  width: 900px;
-  margin: 15px auto 0 auto;
-  color: #9e7b50;
-  font-size: 13px;
-  text-align: left;
-  opacity: 0.95;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-.footer .version {
-  text-align: right;
-  min-width: 80px;
-  opacity: 0.6;
+  font-size: 12px;
+  color: #7b614b;
 }
 
-/* Existing breakpoint (kept and extended) */
-@media (max-width: 1000px) {
-  .container,
-  .footer {
-    width: 100vw;
-    min-width: 320px;
-    box-sizing: border-box;
-  }
-}
-
-/* Responsive: Tablet and small laptops */
-@media (max-width: 900px) {
+/* 9. MOBILE RESPONSIVE LOGIC */
+@media (max-width: 768px) {
   .container {
-    width: calc(100% - 48px);
-    margin: 32px auto;
-    flex-direction: column;
+    flex-direction: column; /* Stack vertically on phones */
     min-height: auto;
-    padding: 12px;
   }
 
-  /* Stack main above sidebar for a more natural flow on narrow screens */
-  .main {
-    order: 1;
-    padding: 20px;
-    min-height: 260px;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
   .sidebar {
-    order: 2;
     width: 100%;
-    border-left: none;
-    border-radius: 0 0 8px 8px;
-    padding: 20px;
-    margin-top: 12px;
+    order: 2; /* Form moves to bottom */
+    padding: 30px 20px;
+    border-right: none;
+    border-top: 1px solid #eee;
   }
 
-  .footer {
-    width: calc(100% - 48px);
-    margin: 12px auto 0 auto;
-    padding: 0 12px;
-  }
-
-  .background-title {
-    font-size: 48px;
-    top: -40px;
-  }
-
-  .logo {
-    top: 10px;
-    left: 12px;
-    width: 34px;
-  }
-
-  .topbar {
-    right: 12px;
-    top: 10px;
-    font-size: 15px;
-    padding: 6px 12px;
-  }
-
-  .sidebar input[type="text"],
-  .sidebar button {
-    font-size: 15px;
-  }
-}
-
-/* Responsive: Phones (small and large) */
-@media (max-width: 480px) {
-  body {
-    font-size: 15px;
-  }
-
-  .container {
-    width: calc(100% - 32px);
-    margin: 20px auto;
-    padding: 8px;
-    border-radius: 6px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Keep vertical stacking */
   .main {
-    padding: 16px;
-    min-height: 200px;
-  }
-
-  .sidebar {
-    padding: 16px;
-  }
-
-  .sidebar label {
-    font-size: 14px;
-  }
-
-  .sidebar input[type="text"] {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .sidebar button {
-    padding: 10px 0;
-    font-size: 15px;
+    width: 100%;
+    order: 1; /* List stays at top */
+    padding: 70px 20px 30px 20px;
   }
 
   .background-title {
-    display: none; /* hide large decorative title on very small screens */
-  }
-
-  .logo {
-    width: 30px;
-    top: 8px;
-    left: 10px;
-  }
-
-  .topbar {
-    right: 8px;
-    top: 8px;
-    font-size: 14px;
-    padding: 6px 10px;
-  }
-
-  .todos-empty {
-    font-size: 14px;
+    display: none; /* Too cluttered for mobile */
   }
 
   li {
-    min-width: 0;
-    gap: 8px;
-    font-size: 14px;
-  }
-
-  .delete-x {
-    font-size: 14px;
-  }
-
-  .footer {
-    width: calc(100% - 32px);
-    margin: 12px auto 0 auto;
-    padding: 0 8px;
-    font-size: 12px;
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-start;
-  }
-
-  .footer .version {
-    text-align: left;
-    min-width: auto;
-    opacity: 0.7;
+    font-size: 16px; /* Larger text for easier tapping */
   }
 }
-
-/* Very small devices (older phones or narrow screens) */
-@media (max-width: 360px) {
-  .container {
-    margin: 12px 8px;
-    width: calc(100% - 16px);
-    padding: 6px;
-  }
-
-  .sidebar {
-    padding: 12px;
-  }
-
-  .main {
-    padding: 12px;
-    min-height: 160px;
-  }
-
-  .sidebar button {
-    padding: 10px 0;
-    font-size: 14px;
-  }
-}
-
