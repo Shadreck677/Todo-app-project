@@ -43,7 +43,7 @@ body {
 .sidebar {
   width: 320px;
   background: #fcf8f3;
-  padding: 80px 24px 24px 24px;
+  /* padding: 80px 24px 24px 24px; */
   display: flex;
   flex-direction: column;
   border-right: 1px solid #eee;
@@ -178,4 +178,5 @@ li:hover {
     font-size: 16px; 
   }
 }
+
 
