@@ -88,3 +88,9 @@ function renderTodos() {
 function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+const now = new Date();
+const year = getFullYear(now);
+
+const Copyright = document.getElementById("Copyright");
+Copyright.textContent = "Shadreck";
