@@ -90,7 +90,7 @@ function saveTodos() {
 }
 
 const now = new Date();
-const year = getFullYear(now);
+const year = now.getFullYear(); 
 
 const Copyright = document.getElementById("Copyright");
-Copyright.textContent = "Shadreck";
+Copyright.textContent = `©${year} by Shadreck`; 
